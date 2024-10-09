@@ -1,0 +1,197 @@
+/* App.css */
+
+/* CSS Variables for Consistent Theming */
+:root {
+  --primary-color: #61dafb;
+  --primary-hover-color: #21a1f1;
+  --secondary-color: #282c34;
+  --background-color: #f5f5f5;
+  --header-background: #282c34;
+  --body-background: #ffffff;
+  --text-color: #333333;
+  --link-color: #61dafb;
+  --link-hover-color: #21a1f1;
+  --button-color: #61dafb;
+  --button-hover-color: #21a1f1;
+  --button-active-color: #1a8cd8;
+  --card-background: #ffffff;
+  --card-border: #e0e0e0;
+  --card-shadow: rgba(0, 0, 0, 0.1);
+  --card-hover-shadow: rgba(0, 0, 0, 0.2);
+}
+
+/* Global Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Logo Styles */
+.App-logo {
+  height: 10vmin;
+  pointer-events: none;
+  transition: transform 0.3s ease-in-out;
+}
+
+.App-logo:hover {
+  transform: scale(1.1);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Header Styles */
+.App-header {
+  background-color: var(--header-background);
+  min-height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: var(--body-background);
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.App-header:hover {
+  background-color: darken(var(--header-background), 10%);
+}
+
+/* Body Styles */
+.App-body {
+  background-color: var(--body-background);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  font-size: calc(10px + 1vmin);
+  color: var(--text-color);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.App-body:hover {
+  background-color: #f0f8ff;
+}
+
+/* Links */
+.App-link {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.3s ease-in-out, text-decoration 0.3s ease-in-out;
+}
+
+.App-link:hover,
+.App-link:focus {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+/* Buttons */
+button,
+.MuiButton-root {
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--button-color);
+  color: var(--body-background);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover,
+.MuiButton-root:hover {
+  background-color: var(--button-hover-color);
+  transform: translateY(-2px);
+}
+
+button:active,
+.MuiButton-root:active {
+  background-color: var(--button-active-color);
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .App-header {
+    font-size: calc(8px + 2vmin);
+  }
+
+  .App-logo {
+    height: 15vmin;
+  }
+
+  .App-body {
+    padding: 10px;
+    font-size: calc(8px + 1vmin);
+  }
+
+  button,
+  .MuiButton-root {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* Interactive Container */
+.interactive-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Card Component */
+.card {
+  background-color: var(--card-background);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 4px 6px var(--card-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px var(--card-hover-shadow);
+}
+
+/* Additional Animations */
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
